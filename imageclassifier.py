@@ -19,8 +19,9 @@ class ImageClassifier(nn.Module):
         return self.mlp(X)
 
 
-# Use the GPU if available, otherwise fall back to CPU
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+# Select device: "cuda" if available, else "cpu"
+device = "cuda" if torch.cuda.is_available() else "cpu"
+print("Using device:", device)
 
 # Set the random seed right before creating the model
 torch.manual_seed(42)
