@@ -1,8 +1,8 @@
-# Reuse the model and device from imageclassifier.py, and the valid_loader
+# Reuse the trained model and device from training.py, and the valid_loader
 # and train_and_valid_data from loader.py and loaddataset.py
 import torch
 
-from imageclassifier import model, device
+from training import model, device
 from loaddataset import train_and_valid_data
 from loader import valid_loader
 

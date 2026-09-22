@@ -61,5 +61,4 @@ def train2(model, optimizer, criterion, metric, train_loader, valid_loader, n_ep
     return history
 
 
-if __name__ == "__main__":
-    history = train2(model, optimizer, xentropy, accuracy, train_loader, valid_loader, n_epochs)
+history = train2(model, optimizer, xentropy, accuracy, train_loader, valid_loader, n_epochs)
