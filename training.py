@@ -24,6 +24,9 @@ accuracy_metric = torchmetrics.classification.MulticlassAccuracy(num_classes=10)
 # Set the number of training epochs
 epochs = 20
 
+# Track training accuracy across epochs for later plotting
+accuracy_history = []
+
 # Report status: training is starting, on which device
 print(f"Starting training on device: {device}")
 
@@ -66,6 +69,9 @@ for epoch in range(epochs):
 
     # Compute the accuracy accumulated over the whole epoch
     epoch_accuracy = accuracy_metric.compute()
+
+    # Record this epoch's accuracy for later plotting
+    accuracy_history.append(epoch_accuracy.item())
 
     # Report status: epoch number, average loss, and accuracy
     print(f"Epoch {epoch + 1}/{epochs} - loss: {epoch_loss:.4f} - accuracy: {epoch_accuracy:.4f}")
