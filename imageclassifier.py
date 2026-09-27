@@ -1,5 +1,9 @@
-# Import torch's neural network module to build the model
+# Import torch to check CUDA availability and torch's neural network module to build the model
+import torch
 from torch import nn
+
+# Select cuda as the device if available, otherwise fall back to cpu
+device = "cuda" if torch.cuda.is_available() else "cpu"
 
 
 # Define the image classifier as a subclass of nn.Module
